@@ -11,7 +11,7 @@ class Home extends Component {
     axios.get('/api/friends')
       .then( res => {
         this.props.dispatch(setHeaders(res.headers))
-        this.setState({ cats: res.data })
+        this.setState({ friends: res.data })
       })
   }
 
