@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
-import { Header } from 'semantic-ui-react';
+import { Header, Image, Segment } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import DanSpaceBig from '../images/danspace-big.png';
 
 class NoMatch extends Component {
   render() {
     return (
-      <Header as='h1' textAlign='center'>
-        Page Not Found
-        <Link to='/'> Home</Link>
-      </Header>
+      <Segment>
+        <Image src={DanSpaceBig} size='large' />
+        <Header as='h1' textAlign='center'>
+          404
+          <br />
+          No Friends Here
+          <br />
+          <Link to='/'> Home</Link>
+        </Header>
+      </Segment>
     );
   }
 }
