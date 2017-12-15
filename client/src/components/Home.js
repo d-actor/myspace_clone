@@ -32,7 +32,8 @@ class Home extends Component {
   render() {
     return (
     <Segment basic>
-      <Header as='h1' textAlign='center'>Welcome to DanSpace </Header>
+      <Header as='h1' textAlign='center'>Welcome to DanSpace</Header>
+      <Header as='h3' textAlign='center'>It's like Myspace, but not as good</Header>
       <Grid relaxed columns={4}>
       { this.state.friends.map( friend =>
         <Grid.Column>
@@ -41,9 +42,10 @@ class Home extends Component {
        >
       <h2>{friend.name}</h2>
           <Image src={friend.avatar} />
-          <h3>{friend.description}</h3>
+          <h3>{friend.bio}</h3>
           <p>Age: {friend.age}</p>
-          <Button onClick={ () => this.addFriend(friend.id)}> Add Friend </Button>
+          <Button primary onClick={ () => this.addFriend(friend.id)}> Add Friend </Button>
+          <Button color='red' onClick={ () => this.deleteFriend(friend.id)}> Delete Friend </Button>
       </Card>
       </Grid.Column>
          )
