@@ -5,8 +5,8 @@ const friends = ( state = [], action ) => {
     case 'ADD_FRIEND':
       return [action.friend, ...state]
     case 'UPDATE_BLOG':
-      return state.map( friend => {
-        if (friend.id === action.friend.id)
+      return state.map( f => {
+        if (f.id === action.friend.id)
           return action.friend
         return friend
       })

@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
-import { Header, Image, Divider, Icon, Grid, Card, Button, Container, Segment } from 'semantic-ui-react';
+import {
+  Header,
+  Image,
+  Divider,
+  Icon,
+  Grid,
+  Card,
+  Button,
+  Container,
+  Segment,
+} from 'semantic-ui-react';
 import axios from 'axios';
 import { setHeaders } from '../actions/headers';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
   state = { friends: [] }
@@ -44,8 +55,11 @@ class Home extends Component {
           <Image src={friend.avatar} />
           <h3>{friend.bio}</h3>
           <p>Age: {friend.age}</p>
+          <Link to={`/friend/${friend.id}`}>
+            View Profile
+          </Link>
           <Button primary onClick={ () => this.addFriend(friend.id)}> Add Friend </Button>
-          <Button color='red' onClick={ () => this.deleteFriend(friend.id)}> Delete Friend </Button>
+          <Button color='red' onClick={ () => this.deleteFriend(friend.id)}> Dismiss Friend </Button>
       </Card>
       </Grid.Column>
          )
