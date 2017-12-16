@@ -63,7 +63,7 @@ class Home extends Component {
       </Card>
       </Grid.Column>
          )
-         }
+        }
       </Grid>
       </Segment>
     );

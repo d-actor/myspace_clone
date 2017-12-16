@@ -10,6 +10,7 @@ import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
 import { Switch, Route } from 'react-router-dom';
 import FriendView from './FriendView';
+import MyFriends from './MyFriends';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path='/friend/:id' component={FriendView} />
             <AuthRoute exact path='/login' component={Login} />
             <AuthRoute exact path='/register' component={Register} />
+            <ProtectedRoute eact path='/my_friends' component={MyFriends} />
             <Route component={NoMatch} />
           </Switch>
         </FetchUser>

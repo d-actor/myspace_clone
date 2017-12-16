@@ -37,7 +37,8 @@ const FriendView =({ friend = {} }) => (
 )
 
 const mapStateToProps = (state, props) => {
-  return { friend: state.friends.find( f => f.id === parseInt(props.match.params.id )) }
+  let { friends } = this.state;
+  return { friend: friends.find( f => f.id === parseInt(props.match.params.id )) }
 }
 
 export default connect(mapStateToProps)(FriendView);

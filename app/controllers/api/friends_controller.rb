@@ -14,6 +14,10 @@ class Api::FriendsController < ApplicationController
     render json: @friend
   end
 
+  def my_friends
+    render json: Friend.liked(current_user.liked_friends)
+  end
+
   def destroy
     @friend.destroy
   end
@@ -21,7 +25,7 @@ class Api::FriendsController < ApplicationController
   private
 
   def set_friend
-    @friend = Friend.find(params[:id])
+    @friend = User.friend.find(params[:id])
   end
 
 end
